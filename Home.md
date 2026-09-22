@@ -1,74 +1,39 @@
-# Aqua Mnemosynth
+# Aqua Mnemosynth Wiki
 
-Welcome to the Aqua Mnemosynth wiki — a single-page overview of the system and its core model.
+Welcome to the complete documentation for **Aqua Mnemosynth**, a mythotechnical framework for symbolic computation, PHCA analysis, recursive inference, and liability-risk modeling.
 
-## Overview
+## Project status
 
-Aqua Mnemosynth is a mythotechnical system for symbolic computation, PHCA analysis, recursive inference, and liability-risk modeling. It is designed to combine symbolic reasoning with structured operational analysis so that abstract models can be tested against real-world constraints.
+The repository is currently a lightweight documentation scaffold containing the project description, license, ignore rules, and this wiki content. The computational components described here are the intended architecture and roadmap; they should not be interpreted as already-implemented features unless corresponding source code is added to the repository.
 
-## Core Purpose
+## Wiki guide
 
-The system coordinates four major domains:
+- [Project Overview](Overview.md) — mission, scope, and current status
+- [Architecture](Architecture.md) — system layers and data flow
+- [Core Concepts](Core-Concepts.md) — vocabulary and conceptual model
+- [Methodology](Methodology.md) — recommended analysis workflow
+- [Risk and Liability Model](Risk-and-Liability.md) — accountability and failure analysis
+- [Roadmap](Roadmap.md) — staged development plan
+- [Contributing](Contributing.md) — how to participate
+- [Glossary](Glossary.md) — quick reference
 
-- Symbolic computation: representing concepts, transformations, and reasoning structures as explicit symbolic objects.
-- PHCA analysis: modeling phased or hierarchical cognitive-analytic structures for system behavior and uncertainty.
-- Recursive inference: iterating over nested symbolic hypotheses and evidence to refine understanding.
-- Liability-risk modeling: evaluating responsibility, exposure, and failure modes under complex causal chains.
+## At a glance
 
-## Philosophy
+Aqua Mnemosynth brings together:
 
-Aqua Mnemosynth treats cognition as a structured environment of memory, signals, and inference. Instead of viewing intelligence as a monolithic process, it models it as recursive, layered, and partially adversarial. The result is a framework for capturing both formal rigor and mythic ambiguity.
+1. **Symbolic computation** for explicit concepts, claims, rules, and transformations.
+2. **PHCA analysis** for context, hierarchy, phase, and system-state analysis.
+3. **Recursive inference** for iterative hypothesis refinement.
+4. **Liability-risk modeling** for tracing responsibility, exposure, and consequences.
 
-## System Layers
+## Guiding principles
 
-### 1. Symbolic Layer
-This layer handles formal objects such as concepts, claims, rules, and transformations. It is the substrate for computation, logic, and representation.
+- Represent before interpreting.
+- Keep observations, assumptions, and conclusions separate.
+- Treat uncertainty as structured information.
+- Prefer inspectable reasoning over unexplained output.
+- Track consequences across the full causal chain.
 
-### 2. PHCA Layer
-PHCA analysis introduces a structured way to examine context, hierarchy, and dynamic phase transitions. It helps identify where an inference is stable, brittle, or under pressure.
+## Quick start
 
-### 3. Recursive Inference Layer
-This layer iterates on evidence, hypotheses, and counterfactuals. New observations refine prior representations instead of replacing them outright.
-
-### 4. Risk/Liability Layer
-The modeling layer evaluates where responsibility emerges, how exposure compounds, and what tradeoffs are ethically or operationally meaningful.
-
-## Example Use Cases
-
-- Analyzing symbolic contradictions in a belief network
-- Mapping multi-step causal failures in a system
-- Probing recursive argument structures
-- Stress-testing liability assumptions in complex processes
-- Building mythotechnical models for AI reasoning and governance
-
-## Working Principles
-
-- Represent first, interpret later.
-- Treat uncertainty as structure, not noise.
-- Favor recursive refinement over one-shot certainty.
-- Separate assumptions from claims.
-- Track responsibility and consequence across layers.
-
-## Minimal Workflow
-
-1. Define symbolic entities and relations.
-2. Identify the relevant PHCA structure or phase model.
-3. Run recursive inference over candidate explanations.
-4. Evaluate risks, liabilities, and failure surfaces.
-5. Refine the model based on evidence and constraints.
-
-## Roadmap
-
-- Expand symbolic object primitives
-- Formalize PHCA graph structures
-- Add recursive inference engines
-- Connect liability modeling to outcome evaluation
-- Build shared visualizations and reasoning traces
-
-## Notes
-
-This page intentionally acts as a compact landing page for the project. It is designed to be a one-page wiki entry that can grow as the project matures.
-
----
-
-Aqua Mnemosynth is a conceptual and computational framework for mapping symbolic intelligence to operational accountability.
+For now, start with the [Methodology](Methodology.md) page to understand how a future analysis should be structured. When implementation begins, the README and this wiki should be updated together so that documented behavior matches the code.
