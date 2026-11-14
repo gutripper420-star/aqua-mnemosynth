@@ -1,6 +1,13 @@
 # aqua-mnemosynth
 Aqua Mnemosynth: a mythotechnical system for symbolic computation, PHCA analysis, recursive inference, and liability-risk modeling.
 
+## Integrated architecture
+
+The [integrated architecture](Integrated-Architecture.md) combines the
+Digital Organism lineage and AGLA-OSINT methodology while distinguishing
+conceptual claims from implemented features and unverified case-study
+assertions.
+
 ## Evidence integrity prototype
 
 The repository includes a local evidence-recording prototype. It stores uploaded

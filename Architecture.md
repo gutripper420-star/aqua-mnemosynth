@@ -1,5 +1,10 @@
 # Architecture
 
+For the combined conceptual lineage and AGLA-OSINT design, see
+[Integrated Architecture](Integrated-Architecture.md). That document separates
+the proposed framework from the repository's implemented components and records
+the validation and privacy limitations.
+
 ## Design goal
 
 The architecture separates representation, contextual analysis, inference, and accountability. Separating these concerns makes reasoning easier to inspect, test, revise, and explain.
