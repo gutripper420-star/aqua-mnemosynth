@@ -4,7 +4,7 @@ import sqlite3
 import pytest
 from fastapi.testclient import TestClient
 
-from backend.main import MAX_UPLOAD_BYTES, create_app
+from backend.main import MAX_REQUEST_BYTES, MAX_UPLOAD_BYTES, create_app
 
 
 @pytest.fixture
@@ -54,6 +54,15 @@ def test_rejects_oversized_upload(client):
     response = client.post(
         "/upload",
         files={"file": ("large.bin", b"x" * (MAX_UPLOAD_BYTES + 1))},
+    )
+
+    assert response.status_code == 413
+
+
+def test_rejects_oversized_request_body_before_parsing(client):
+    response = client.post(
+        "/upload",
+        files={"file": ("large.bin", b"x" * MAX_REQUEST_BYTES)},
     )
 
     assert response.status_code == 413

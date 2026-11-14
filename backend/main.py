@@ -9,8 +9,72 @@ from fastapi import FastAPI, File, HTTPException, Query, UploadFile
 from backend import database, hashing
 
 MAX_UPLOAD_BYTES = 10 * 1024 * 1024
+MAX_REQUEST_BYTES = MAX_UPLOAD_BYTES + 64 * 1024
 MAX_FILENAME_LENGTH = 255
 SHA256_PATTERN = re.compile(r"^[0-9a-fA-F]{64}$")
+
+
+class RequestBodyTooLarge(Exception):
+    pass
+
+
+class RequestBodyLimitMiddleware:
+    def __init__(self, app, max_bytes: int):
+        self.app = app
+        self.max_bytes = max_bytes
+
+    async def __call__(self, scope, receive, send):
+        if scope["type"] != "http":
+            await self.app(scope, receive, send)
+            return
+
+        content_length = next(
+            (value for name, value in scope["headers"] if name.lower() == b"content-length"),
+            None,
+        )
+        if content_length is not None and int(content_length) > self.max_bytes:
+            await send(
+                {
+                    "type": "http.response.start",
+                    "status": 413,
+                    "headers": [(b"content-type", b"text/plain; charset=utf-8")],
+                }
+            )
+            await send(
+                {
+                    "type": "http.response.body",
+                    "body": b"Request body exceeds the allowed size.",
+                }
+            )
+            return
+
+        received = 0
+
+        async def limited_receive():
+            nonlocal received
+            message = await receive()
+            if message["type"] == "http.request":
+                received += len(message.get("body", b""))
+                if received > self.max_bytes:
+                    raise RequestBodyTooLarge
+            return message
+
+        try:
+            await self.app(scope, limited_receive, send)
+        except RequestBodyTooLarge:
+            await send(
+                {
+                    "type": "http.response.start",
+                    "status": 413,
+                    "headers": [(b"content-type", b"text/plain; charset=utf-8")],
+                }
+            )
+            await send(
+                {
+                    "type": "http.response.body",
+                    "body": b"Request body exceeds the allowed size.",
+                }
+            )
 
 
 def create_app(db_path: str | Path = database.DB_PATH) -> FastAPI:
@@ -20,6 +84,7 @@ def create_app(db_path: str | Path = database.DB_PATH) -> FastAPI:
         yield
 
     app = FastAPI(title="Aqua Mnemosynth Evidence Integrity API", lifespan=lifespan)
+    app.add_middleware(RequestBodyLimitMiddleware, max_bytes=MAX_REQUEST_BYTES)
 
     @app.post("/upload")
     async def upload_evidence(file: Annotated[UploadFile, File(...)]) -> dict[str, object]:
