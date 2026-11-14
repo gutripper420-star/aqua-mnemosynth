@@ -1,10 +1,12 @@
 import hmac
+import os
 import re
 from contextlib import asynccontextmanager
 from pathlib import Path
 from typing import Annotated
 
-from fastapi import FastAPI, File, HTTPException, Query, UploadFile
+from fastapi import Depends, FastAPI, File, HTTPException, Query, UploadFile
+from fastapi.security import HTTPBasic, HTTPBasicCredentials
 
 from backend import database, hashing
 
@@ -12,6 +14,18 @@ MAX_UPLOAD_BYTES = 10 * 1024 * 1024
 MAX_REQUEST_BYTES = MAX_UPLOAD_BYTES + 64 * 1024
 MAX_FILENAME_LENGTH = 255
 SHA256_PATTERN = re.compile(r"^[0-9a-fA-F]{64}$")
+PASSWORD_MIN_LENGTH = 12
+basic_auth = HTTPBasic(auto_error=False)
+
+
+def validate_password(password: str | None) -> str:
+    if password is None or len(password) < PASSWORD_MIN_LENGTH:
+        raise RuntimeError(
+            f"Set EVIDENCE_PASSWORD to a password of at least {PASSWORD_MIN_LENGTH} characters."
+        )
+    if not password.isascii() or any(ord(char) < 32 for char in password):
+        raise RuntimeError("EVIDENCE_PASSWORD must contain printable ASCII characters only.")
+    return password
 
 
 class RequestBodyTooLarge(Exception):
@@ -77,17 +91,53 @@ class RequestBodyLimitMiddleware:
             )
 
 
-def create_app(db_path: str | Path = database.DB_PATH) -> FastAPI:
+def create_app(
+    db_path: str | Path = database.DB_PATH,
+    password: str | None = None,
+) -> FastAPI:
+    configured_password: str | None = None
+
     @asynccontextmanager
     async def lifespan(_: FastAPI):
+        nonlocal configured_password
+        configured_password = validate_password(
+            password if password is not None else os.environ.get("EVIDENCE_PASSWORD")
+        )
         database.init_db(db_path)
+        database.check_integrity(db_path)
         yield
 
     app = FastAPI(title="Aqua Mnemosynth Evidence Integrity API", lifespan=lifespan)
     app.add_middleware(RequestBodyLimitMiddleware, max_bytes=MAX_REQUEST_BYTES)
 
-    @app.post("/upload")
-    async def upload_evidence(file: Annotated[UploadFile, File(...)]) -> dict[str, object]:
+    async def require_auth(
+        credentials: Annotated[HTTPBasicCredentials | None, Depends(basic_auth)],
+    ) -> None:
+        if (
+            configured_password is None
+            or credentials is None
+            or not hmac.compare_digest(
+                credentials.username.encode("utf-8"), b"mnemosyne"
+            )
+            or not hmac.compare_digest(
+                credentials.password.encode("utf-8"),
+                configured_password.encode("ascii"),
+            )
+        ):
+            raise HTTPException(
+                status_code=401,
+                detail="Incorrect local ledger credentials.",
+                headers={"WWW-Authenticate": "Basic"},
+            )
+
+    @app.get("/health", dependencies=[Depends(require_auth)])
+    async def health() -> dict[str, str]:
+        return {"status": "ok"}
+
+    @app.post("/upload", dependencies=[Depends(require_auth)])
+    async def upload_evidence(
+        file: Annotated[UploadFile, File(...)],
+    ) -> dict[str, object]:
         filename = (file.filename or "").replace("\\", "/").rsplit("/", 1)[-1].strip()
         if not filename or len(filename) > MAX_FILENAME_LENGTH:
             raise HTTPException(status_code=400, detail="Invalid filename.")
@@ -105,7 +155,25 @@ def create_app(db_path: str | Path = database.DB_PATH) -> FastAPI:
             "sha256": file_hash,
         }
 
-    @app.get("/verify/{filename}")
+    @app.post("/verify", dependencies=[Depends(require_auth)])
+    async def verify_uploaded_file(
+        file: Annotated[UploadFile, File(...)],
+    ) -> dict[str, str | bool | int | None]:
+        contents = await file.read(MAX_UPLOAD_BYTES + 1)
+        if len(contents) > MAX_UPLOAD_BYTES:
+            raise HTTPException(status_code=413, detail="File exceeds the 10 MiB upload limit.")
+        file_hash = hashing.generate_sha256(contents)
+        record = database.get_record_by_hash(db_path, file_hash)
+        return {
+            "filename": file.filename or "",
+            "match": record is not None,
+            "sha256": file_hash,
+            "record_id": record[0] if record else None,
+            "recorded_filename": record[1] if record else None,
+            "recorded_at": record[2] if record else None,
+        }
+
+    @app.get("/verify/{filename}", dependencies=[Depends(require_auth)])
     async def verify_evidence(
         filename: str,
         provided_hash: Annotated[str, Query(min_length=64, max_length=64)],

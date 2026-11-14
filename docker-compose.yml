@@ -4,8 +4,9 @@ services:
     command: uvicorn backend.main:app --host 0.0.0.0 --port 8000
     environment:
       EVIDENCE_DB_PATH: /app/data/evidence_ledger.db
+      EVIDENCE_PASSWORD: ${EVIDENCE_PASSWORD:?Set EVIDENCE_PASSWORD in your shell}
     ports:
-      - "8000:8000"
+      - "127.0.0.1:8000:8000"
     volumes:
       - evidence_data:/app/data
 
@@ -17,7 +18,7 @@ services:
     environment:
       API_URL: http://backend:8000
     ports:
-      - "8501:8501"
+      - "127.0.0.1:8501:8501"
 
 volumes:
   evidence_data:

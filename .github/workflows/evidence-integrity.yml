@@ -2,7 +2,6 @@ name: Evidence Integrity Build and Test
 
 on:
   push:
-    branches: ["main"]
   pull_request:
     branches: ["main"]
 
@@ -25,7 +24,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r backend/requirements-dev.txt -r frontend/requirements.txt -r requirements-science.txt
 
-      - name: Run backend tests
+      - name: Run application and ledger integrity tests
         run: python -m pytest -q
 
       - name: Build container
