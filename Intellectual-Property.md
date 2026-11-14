@@ -69,6 +69,7 @@ The author reports these resolve to the titles below. This repository could not 
 - https://doi.org/10.5281/zenodo.21466527: The American Family Auction, Version 5.0 (Zenodo software record, Jul 21, 2026; earlier versions 21464225, 21465452, 21466242 and 21464450; concept DOI 21464224; keywords reference a Terman/eugenics-gateway forensic audit and DOIs 21410343 and 21403082, whose titles were not supplied)
 - https://doi.org/10.5281/zenodo.22788644: Title not supplied (Zenodo working paper, Sep 16, 2026; keywords: systems theory, curvature analysis, financial and social networks, asset masking, PHCA, Mnemosyne)
 - https://doi.org/10.5281/zenodo.21185785: The Sentinel Cardio Verification Hook: A Correction and Containment Protocol for the Viscous Fermionic Condensate Model (dated 5 July 2026; DOI taken from the trailing link you pasted, since the record text lists 10.5281/zenodo.18384430 as both its own DOI and its "parent framework", so confirm which is which). The record critiques a third-party model (Shlyapik's VFC) and describes itself as "canonical" and "peer-review ready"; those are the author's labels and nothing here has been reviewed
+- https://doi.org/10.5281/zenodo.20762210: Title not supplied (dated June 19, 2026; the pasted record lists only three JPEG image files, no description)
 
 Excluded: 10.5281/zenodo.21319990 was reported not to resolve. Words such as "adversarially verified" and "mathematically proven" in titles are the author's claims and have not been reviewed here.
 
