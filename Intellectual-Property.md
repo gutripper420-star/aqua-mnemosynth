@@ -38,6 +38,12 @@ Titles and `share.google` links are the author's; contents have not been reviewe
 - The Sovereign Convergence: https://share.google/r3TGjrrVsA4Ie2aI3
 - Blinding the Watchtower: The Mathematical Defeat of the Panopticon via Non-Hermitian Curvature Dynamics: https://share.google/oE3qXc4hFOcUELNLV
 - The Founding Charter of Systems Pathology: https://share.google/7WQCLM8JYsXCrxHaN
+- Systems Pathology: Forensic Audit, The Shores of Fraud: https://share.google/2QojD0Mo3MHZd8S6E
+- The Weaponization of Grit: https://share.google/KbSA7X626nhwQMQzl
+- The Inverted Pyramid: A PHCA Systems Analysis of Needs, Institutional Constraints, and Human Autonomy: https://share.google/gnkRasESonBIEJ5Ew
+- The Algorithmic Skinner Box: A PHCA Systems Audit of Reinforcement Schedules, Computational Architecture, and Cognitive Autonomy: https://share.google/t0rmBVcqlKxbUPvPv
+- Proclus Dynamics Consortium: Grays Harbor County Systemic Integrity Micro Audit v1.0: https://share.google/F4hN9f7cNcExcRtzE
+- Phase II-H-ext7: Optional Refinement, Single-Valued Threshold Extension to N=12: https://share.google/tTzBKP3Pnrg3zNq50
 
 ## Usage notes
 
