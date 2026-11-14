@@ -72,6 +72,7 @@ The author reports these resolve to the titles below. This repository could not 
 - https://doi.org/10.5281/zenodo.20762210: Title not supplied (dated June 19, 2026; the pasted record lists only three JPEG image files, no description)
 - https://doi.org/10.5281/zenodo.18384430: From Proclean Unity to Systemic Coherence: First Principles of the Continuum Architecture (Zenodo thesis, v1, Jan 27, 2026, CC-BY 4.0; concept DOI 18384429; the description defines the Negative Exchange Equation as an invariant, a claim not reviewed here)
 - https://doi.org/10.5281/zenodo.20143668: Title not supplied (the pasted record shows only a file `text 25.txt`, 11.7 kB, and a note about filling metadata fields; no title or description)
+- https://doi.org/10.5281/zenodo.23282411: A PT-Symmetric XXZ Chain with an External Constraint Field: Exceptional Points, Finite-Size Scaling, and Falsifiable Predictions (with companion "Derivation Status Note: Normalization, Discriminant Structure, and Structural Conditions for Constraint-Field Exceptional-Point Shifts"; tagged Project Prometheus). The author's own note says the predicted shift γ_EP² = J² + λJ⟨G⟩ needs a non-reciprocal off-diagonal coupling and is an open derivation; finite-size scaling and experiments are proposed, not reported. Unreviewed here
 
 Excluded: 10.5281/zenodo.21319990 was reported not to resolve. Words such as "adversarially verified" and "mathematically proven" in titles are the author's claims and have not been reviewed here.
 
