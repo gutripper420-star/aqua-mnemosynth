@@ -54,6 +54,22 @@ Based on record descriptions pasted by the author; the records themselves were n
 - **Navigating Dynamic Curvature Exceptional Points:** the worked GAS-margin example (3.0 - 1.641008 = 1.358992) is arithmetically correct. Whether the condition certifies stability or detects falsification is a mathematical claim needing independent review; the SHA-256 hash chain itself is standard and detects tampering on its own.
 - Records give no DOI numbers in the supplied text; add them here once known.
 
+## Author-supplied DOIs (title mapping pending)
+
+These DOIs were supplied without titles and have not been resolved or checked from this repository. Map each to its title above, then replace the matching `share.google` link. A DOI proves a dated deposit exists, not the correctness of its content.
+
+- https://doi.org/10.5281/zenodo.23968357
+- https://doi.org/10.5281/zenodo.23954808
+- https://doi.org/10.5281/zenodo.23919745
+- https://doi.org/10.5281/zenodo.23907440
+- https://doi.org/10.5281/zenodo.23905217
+- https://doi.org/10.5281/zenodo.21319990
+- https://doi.org/10.5281/zenodo.23686828
+- https://doi.org/10.5281/zenodo.23750755
+- https://doi.org/10.5281/zenodo.23829356
+- https://doi.org/10.5281/zenodo.23829215
+- https://doi.org/10.5281/zenodo.23830177
+
 ## Usage notes
 
 - Citation counts, visibility rankings and "prior art" status are claims to be backed by dated, public records (for example, Zenodo DOIs). A hash recorded in this ledger proves a file existed in that form at a recorded time, not who authored it or that it is novel.
