@@ -33,7 +33,7 @@ run the lattice tests or generate the skin-effect and GBZ plot:
 
 ```bash
 python -m pip install -r requirements-science.txt
-python scripts/plot_skinfx.py --output skinfx.png
+python -m scripts.plot_skinfx --output skinfx.png
 ```
 
 The model uses upper/lower hopping entries `t + gamma` and `t - gamma`;
