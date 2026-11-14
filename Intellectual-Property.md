@@ -64,6 +64,7 @@ The author reports these resolve to the titles below. This repository could not 
 
 - https://doi.org/10.5281/zenodo.23113520: PHCA: County Level Forensic-Audit (Version 3.0; record text calls PHCA-Q a "candidate measurement-and-model-comparison architecture" requiring independent replication and says the pilot cases do not establish coordination, conspiracy, or a county-wide mechanism)
 - https://doi.org/10.5281/zenodo.23113523: Industrial Chemical Release and Ecological Risk at the Cosmo Specialty Fibers Site (DOI taken from the pasted record page's citation field; confirm it is this record's own DOI. Earlier short link: https://share.google/Df0UMbLJDakqzKgoR)
+- https://doi.org/10.5281/zenodo.23047918: Prometheus Monograph (title inferred from the attached file name `PROMETHEUS MONOGRAPH.txt`; the record's own title and description were not supplied; Project Prometheus claims remain unverified, see above)
 
 Excluded: 10.5281/zenodo.21319990 was reported not to resolve. Words such as "adversarially verified" and "mathematically proven" in titles are the author's claims and have not been reviewed here.
 
