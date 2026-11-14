@@ -55,8 +55,9 @@ information.
 The repository currently implements only a small portion of this vision. Its
 evidence prototype records a filename, a SHA-256 digest, and a timestamp in
 SQLite; it does not retain the uploaded file contents, establish source
-authenticity, or offer the full AGLA workflow. The system has no authentication
-and is intended for local experimentation. The conceptual framework must
+authenticity, or offer the full AGLA workflow. The local API now requires a
+configured password, but the password does not encrypt the database file or
+make it suitable for sensitive casework. The conceptual framework must
 therefore not be represented as an operational tool for sensitive
 investigations or case management.
 
@@ -317,19 +318,23 @@ system:
 * A FastAPI endpoint accepts a file, computes its SHA-256 digest, and stores
   the filename, digest, and timestamp in SQLite.
 * A verification endpoint compares a supplied digest with the latest database
-  record for a filename.
+  record for a filename, and a file-upload endpoint compares a new file's
+  digest with recorded digests.
 * A Streamlit interface provides local upload and verification workflows.
+* A configured password is required for API access; Docker Compose binds its
+  published ports to loopback.
 * Uploads are limited to 10 MiB.
 * The SQLite schema has triggers that reject ordinary SQL update and delete
-  statements.
+  statements. Startup also checks basic database integrity and record format.
 * `core/lattice.py` contains a separate real-hopping Hatano–Nelson numerical
   model with tests and a plotting command.
 
 The uploaded bytes are not retained as evidence, source identity is not
-verified, and the service is unauthenticated. A person with direct access to
-the SQLite file can modify the database or triggers. These limits mean the
-prototype is suitable only for local experimentation, not a forensic chain of
-custody or a production service involving vulnerable people.
+verified, and the password does not encrypt the SQLite file. A person with
+direct access to the database can alter records or triggers, including
+well-formed values that basic startup checks cannot detect. These limits mean
+the prototype is suitable only for local experimentation, not a forensic
+chain of custody or a production service involving vulnerable people.
 
 ## 13. Limitations and risks
 

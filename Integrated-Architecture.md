@@ -181,12 +181,15 @@ entity resolution, graph correlation, PHCA analysis, automated falsification,
 distributed Council, or a case-study dataset.
 
 - The FastAPI/Streamlit prototype records filenames, SHA-256 digests, and
-  timestamps in SQLite. It does not retain uploaded evidence bytes or verify
+  timestamps in SQLite. Uploads are hashed in memory and not retained; a later
+  uploaded file can be compared with the recorded digests. This does not verify
   source authenticity.
 - SQLite update/delete triggers protect ordinary SQL operations only. A person
-  with database-file access can alter the database or its triggers. This is not
-  immutable forensic storage.
-- The prototype has no authentication and is documented for local use; it is
+  with database-file access can alter the database or its triggers, and
+  well-formed record replacement is not detected by the basic startup checks.
+  The SQLite file is not encrypted; this is not immutable forensic storage.
+- The prototype requires a configured local API password and binds Docker
+  Compose ports to loopback. It is still intended only for local use and is
   not suitable for public or shared deployment without additional controls.
 - `core/lattice.py` implements the one-dimensional real-hopping
   Hatano–Nelson model. It is a numerical module and is not an OSINT anomaly

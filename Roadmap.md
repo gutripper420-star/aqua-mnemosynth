@@ -12,12 +12,12 @@ for production or sensitive casework**.
 
 | Area | Present state |
 |---|---|
-| Evidence prototype | FastAPI and Streamlit local prototype. Records a filename, SHA-256 digest, and timestamp in SQLite; it does not retain uploaded bytes or authenticate source identity. |
-| Storage protections | SQLite triggers reject ordinary SQL updates and deletes. They do not prevent a person with database-file access from changing records or triggers. |
+| Evidence MVP | FastAPI and Streamlit local tool. A configured local password gates the API; uploads are hashed in memory, and filename, SHA-256 digest, and timestamp are stored in SQLite. A later uploaded file can be checked against stored digests. |
+| Storage protections | SQLite triggers reject ordinary SQL updates and deletes, and startup checks database structure, trigger presence, digest format, and timestamps. These checks do not prevent or reliably detect a person with database-file access rewriting valid records. The SQLite file is not encrypted. |
 | Numerical model | `core/lattice.py` implements a real-hopping, one-dimensional Hatano–Nelson model with tests and a plotting command. It is not an OSINT, PHCA, or institutional-stability detector. |
 | AGLA-OSINT | Described conceptually in project documentation; automated ingestion, entity resolution, graph analysis, falsification, and report generation are not implemented. |
 | PHCA and Mnemosyne | Architectural concepts and documentation, not complete executable subsystems. |
-| Deployment | Docker Compose supports local development. The API has no authentication and must not be exposed publicly or used for sensitive records. |
+| Deployment | Docker Compose requires `EVIDENCE_PASSWORD` and publishes services only on loopback. This is a local prototype, not a production or sensitive-record service. |
 
 The status above is grounded in the code and documentation currently present.
 The supplied claims about Project Prometheus, Phase II-F, the \(G_{E_2}\)
@@ -68,7 +68,11 @@ not validate a result.
 **Exit condition:** every public technical claim is traceable to code, a
 reproducible derivation, or a verified source, and its status is labeled.
 
-### Phase 1 — Evidence and provenance model
+### Phase 1 — Local evidence recording and provenance model
+
+The basic local upload, SHA-256 recording, password gate, and file-to-ledger
+verification workflow are implemented. The following provenance and storage
+requirements remain incomplete:
 
 - [ ] Define schemas for source references, claims, evidence, transformations,
   uncertainty, review decisions, and corrections.

@@ -32,9 +32,9 @@ docker compose up --build
 ```
 
 Open the interface at <http://127.0.0.1:8501>. The API is also available on
-<http://127.0.0.1:8000> for local development. Both published ports bind to
-loopback, and the API requires HTTP Basic authentication using the local
-password. For direct backend development, set `EVIDENCE_PASSWORD` and
+<http://127.0.0.1:8000/docs> for local development. Both published ports bind
+to loopback, and protected API routes require HTTP Basic authentication using
+the local password. For direct backend development, set `EVIDENCE_PASSWORD` and
 `EVIDENCE_DB_PATH`, then run `uvicorn backend.main:app --reload`.
 
 Uploads are limited to 10 MiB. The ledger rejects ordinary SQL updates and
