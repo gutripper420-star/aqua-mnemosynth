@@ -26,6 +26,19 @@ The Mnemosyne "quantum search-and-destroy / dead man's switch" concept and the b
 - Code: https://github.com/anthonyjblair8-source/Sentinel-Cardio-The-global-integrity-audit
 - Further Zenodo and prior-art documents were supplied as `share.google` links (Founding Charter of Systems Pathology, Mathematical Framework and Prior Art, PHCA Simulator v1.6.0, The Unified Framework, Digital Twin Specifications, Prior Art and Legal Research, Sovereign Convergence). Shortened links should be replaced with permanent DOIs before being cited.
 
+## Additional Zenodo titles (as supplied)
+
+Titles and `share.google` links are the author's; contents have not been reviewed here, and titles are not endorsements of their claims.
+
+- Preliminary Forensic and Systems Audit of Grays Harbor County Legal and Law-Enforcement Processes: https://share.google/0lnhSt5PELbYcPdrv
+- The Architecture of Hereditary Determinism: https://share.google/vQsuCT58ahObd3m2e
+- The Albinus-Wande Laar Plates: https://share.google/EDbUlvCZ3qhyuvtTl
+- Formally Sealed Non-Smooth State-Space Stabilization: The Proclus Dynamics v1.7.0 Architectural Specification: https://share.google/X0xueQrKb9aJFXRI4
+- PHCA Simulator v1.6.0: Computational baseline for a PHCA-screened fusion model: https://share.google/JXGoXRrGjtp4mmoO3
+- The Sovereign Convergence: https://share.google/r3TGjrrVsA4Ie2aI3
+- Blinding the Watchtower: The Mathematical Defeat of the Panopticon via Non-Hermitian Curvature Dynamics: https://share.google/oE3qXc4hFOcUELNLV
+- The Founding Charter of Systems Pathology: https://share.google/7WQCLM8JYsXCrxHaN
+
 ## Usage notes
 
 - Citation counts, visibility rankings and "prior art" status are claims to be backed by dated, public records (for example, Zenodo DOIs). A hash recorded in this ledger proves a file existed in that form at a recorded time, not who authored it or that it is novel.
