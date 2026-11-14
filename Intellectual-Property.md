@@ -45,6 +45,15 @@ Titles and `share.google` links are the author's; contents have not been reviewe
 - Proclus Dynamics Consortium: Grays Harbor County Systemic Integrity Micro Audit v1.0: https://share.google/F4hN9f7cNcExcRtzE
 - Phase II-H-ext7: Optional Refinement, Single-Valued Threshold Extension to N=12: https://share.google/tTzBKP3Pnrg3zNq50
 
+## Notes from the supplied Zenodo record text
+
+Based on record descriptions pasted by the author; the records themselves were not accessible from this environment.
+
+- **Proclus Dynamics v1.7.0 specification:** describes a quorum of Q = 485 for N = 729, f = 242. As noted above, that quorum is only safe for N = 727; N = 729 needs Q = 486. The record also describes the design as "formally verified", which is not established by this repository.
+- **PHCA Simulator v1.6.0:** the record states it is a phenomenological screening model, makes no fusion or excess-heat claim, and omits the Hatano-Nelson lattice. Its Gamow values (4.87e-5, 6.98e-3, 0.905 for D-D at 10 keV) reproduce from the stated formulas. The record lists SHA-256 hashes: chain `f953085120f4888b7b66f854bef968aea320f52fcbe64e3af82fb835b71e8752`, release ZIP `a4de84bdd52b52e0be69d98b503fca8f31a3330c20cf6754ecdf9f4a90337a9e`, manifest `a7ed48cfa9a43cd6c7db41198bcaa7fc5f7f160bb1219a68cf0bb20c6659cc6c`. These can be checked against downloaded files.
+- **Navigating Dynamic Curvature Exceptional Points:** the worked GAS-margin example (3.0 - 1.641008 = 1.358992) is arithmetically correct. Whether the condition certifies stability or detects falsification is a mathematical claim needing independent review; the SHA-256 hash chain itself is standard and detects tampering on its own.
+- Records give no DOI numbers in the supplied text; add them here once known.
+
 ## Usage notes
 
 - Citation counts, visibility rankings and "prior art" status are claims to be backed by dated, public records (for example, Zenodo DOIs). A hash recorded in this ledger proves a file existed in that form at a recorded time, not who authored it or that it is novel.
