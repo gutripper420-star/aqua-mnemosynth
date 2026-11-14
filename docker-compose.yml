@@ -1,0 +1,21 @@
+services:
+  api:
+    build: .
+    environment:
+      EVIDENCE_PASSWORD: ${EVIDENCE_PASSWORD:?set EVIDENCE_PASSWORD (12+ chars)}
+      EVIDENCE_DB_PATH: /data/evidence.db
+    volumes:
+      - ledger:/data
+    ports:
+      - "127.0.0.1:8000:8000"
+  ui:
+    build: .
+    command: ["streamlit", "run", "frontend/app.py", "--server.address=0.0.0.0", "--server.port=8501", "--server.headless=true"]
+    environment:
+      API_URL: http://api:8000
+    depends_on:
+      - api
+    ports:
+      - "127.0.0.1:8501:8501"
+volumes:
+  ledger:
