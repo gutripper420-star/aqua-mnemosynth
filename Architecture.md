@@ -88,3 +88,7 @@ A robust implementation should preserve the following invariants:
 3. Uncertainty is never silently converted into certainty.
 4. Revisions do not erase prior reasoning history.
 5. Risk scores, if introduced, expose their variables and limitations.
+
+## Relationship to author-supplied frameworks
+
+The implemented ledger (`backend/main.py`) realizes only the SHA-256 hash-chain idea; `backend/quorum.py` checks the N = 729 / F = 242 thresholds. F = 242 is correct (N >= 3F + 1), but Q = 485 (= 2F + 1) leaves quorums overlapping in only 241 nodes; safe quorum for N = 729 is 486. Other frameworks in `Intellectual-Property.md` are conceptual and must be treated as unverified claims.
