@@ -70,6 +70,8 @@ The author reports these resolve to the titles below. This repository could not 
 - https://doi.org/10.5281/zenodo.22788644: Title not supplied (Zenodo working paper, Sep 16, 2026; keywords: systems theory, curvature analysis, financial and social networks, asset masking, PHCA, Mnemosyne)
 - https://doi.org/10.5281/zenodo.21185785: The Sentinel Cardio Verification Hook: A Correction and Containment Protocol for the Viscous Fermionic Condensate Model (dated 5 July 2026; DOI taken from the trailing link you pasted, since the record text lists 10.5281/zenodo.18384430 as both its own DOI and its "parent framework", so confirm which is which). The record critiques a third-party model (Shlyapik's VFC) and describes itself as "canonical" and "peer-review ready"; those are the author's labels and nothing here has been reviewed
 - https://doi.org/10.5281/zenodo.20762210: Title not supplied (dated June 19, 2026; the pasted record lists only three JPEG image files, no description)
+- https://doi.org/10.5281/zenodo.18384430: Title not supplied (Zenodo thesis, v1, Jan 27, 2026, CC-BY 4.0; concept DOI 18384429; keywords: PHCA, Bayesian logic, Negative Exchange Equation, golden ratio, Recursive Co-Cognition). The Sentinel Cardio Verification Hook record text cites this DOI as its parent framework, so it is a separate, earlier record
+- https://doi.org/10.5281/zenodo.20143668: Title not supplied (the pasted record shows only a file `text 25.txt`, 11.7 kB, and a note about filling metadata fields; no title or description)
 
 Excluded: 10.5281/zenodo.21319990 was reported not to resolve. Words such as "adversarially verified" and "mathematically proven" in titles are the author's claims and have not been reviewed here.
 
