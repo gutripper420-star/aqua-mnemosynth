@@ -8,6 +8,10 @@ Digital Organism lineage and AGLA-OSINT methodology while distinguishing
 conceptual claims from implemented features and unverified case-study
 assertions.
 
+See the [Aqua Mnemosyne overview](Aqua-Mnemosyne-Overview.md) for a
+15-section encyclopedia-style summary, an original illustration, and a
+description of proposed safeguards and current implementation limits.
+
 ## Evidence integrity prototype
 
 The repository includes a local evidence-recording prototype. It stores uploaded
