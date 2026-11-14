@@ -67,11 +67,13 @@ def calculate_com(
         raise ValueError("eigenvectors must contain only finite values.")
 
     weights = np.abs(states) ** 2
+    if states.ndim == 1:
+        weights = weights[:, None]
     norms = np.sum(weights, axis=0)
     if np.any(norms == 0):
         raise ValueError("Every state must have non-zero norm.")
     coordinates = np.arange(states.shape[0], dtype=float)
-    centers = np.sum(coordinates[:, None] * np.atleast_2d(weights).T, axis=1) / norms
+    centers = np.sum(coordinates[:, None] * weights, axis=0) / norms
     if states.ndim == 1:
         return float(centers[0])
     return centers
