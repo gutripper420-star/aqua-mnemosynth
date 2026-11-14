@@ -55,3 +55,7 @@ A feature is not complete until it has:
 - provenance or audit behavior where relevant;
 - known limitations;
 - review by an appropriate maintainer.
+
+## Author-supplied frameworks (unverified)
+
+See `Intellectual-Property.md`. Only the NS-BFT quorum arithmetic (`backend/quorum.py`) and the hash-chained ledger are implemented. Next steps for the remaining items: publish specifications, obtain independent math review, then implement with tests. Nothing in that index is production-ready.
