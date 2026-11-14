@@ -36,13 +36,13 @@ Titles and `share.google` links are the author's; contents have not been reviewe
 - Formally Sealed Non-Smooth State-Space Stabilization: The Proclus Dynamics v1.7.0 Architectural Specification: https://share.google/X0xueQrKb9aJFXRI4
 - PHCA Simulator v1.6.0: Computational baseline for a PHCA-screened fusion model: https://share.google/JXGoXRrGjtp4mmoO3
 - The Sovereign Convergence: https://share.google/r3TGjrrVsA4Ie2aI3
-- Blinding the Watchtower: The Mathematical Defeat of the Panopticon via Non-Hermitian Curvature Dynamics: https://share.google/oE3qXc4hFOcUELNLV
-- The Founding Charter of Systems Pathology: https://share.google/7WQCLM8JYsXCrxHaN
-- Systems Pathology: Forensic Audit, The Shores of Fraud: https://share.google/2QojD0Mo3MHZd8S6E
-- The Weaponization of Grit: https://share.google/KbSA7X626nhwQMQzl
-- The Inverted Pyramid: A PHCA Systems Analysis of Needs, Institutional Constraints, and Human Autonomy: https://share.google/gnkRasESonBIEJ5Ew
-- The Algorithmic Skinner Box: A PHCA Systems Audit of Reinforcement Schedules, Computational Architecture, and Cognitive Autonomy: https://share.google/t0rmBVcqlKxbUPvPv
-- Proclus Dynamics Consortium: Grays Harbor County Systemic Integrity Micro Audit v1.0: https://share.google/F4hN9f7cNcExcRtzE
+- Blinding the Watchtower: The Mathematical Defeat of the Panopticon via Non-Hermitian Curvature Dynamics: https://doi.org/10.5281/zenodo.23686828
+- The Founding Charter of Systems Pathology: https://doi.org/10.5281/zenodo.23905217
+- Systems Pathology: Forensic Audit, The Shores of Fraud: https://doi.org/10.5281/zenodo.23907440
+- The Weaponization of Grit: https://doi.org/10.5281/zenodo.23830177
+- The Inverted Pyramid: A PHCA Systems Analysis of Needs, Institutional Constraints, and Human Autonomy: https://doi.org/10.5281/zenodo.23829215
+- The Algorithmic Skinner Box: A PHCA Systems Audit of Reinforcement Schedules, Computational Architecture, and Cognitive Autonomy: https://doi.org/10.5281/zenodo.23829356
+- Proclus Dynamics Consortium: Grays Harbor County Systemic Integrity Micro Audit v1.0: https://doi.org/10.5281/zenodo.23750755
 - Phase II-H-ext7: Optional Refinement, Single-Valued Threshold Extension to N=12: https://share.google/tTzBKP3Pnrg3zNq50
 
 ## Notes from the supplied Zenodo record text
@@ -53,6 +53,16 @@ Based on record descriptions pasted by the author; the records themselves were n
 - **PHCA Simulator v1.6.0:** the record states it is a phenomenological screening model, makes no fusion or excess-heat claim, and omits the Hatano-Nelson lattice. Its Gamow values (4.87e-5, 6.98e-3, 0.905 for D-D at 10 keV) reproduce from the stated formulas. The record lists SHA-256 hashes: chain `f953085120f4888b7b66f854bef968aea320f52fcbe64e3af82fb835b71e8752`, release ZIP `a4de84bdd52b52e0be69d98b503fca8f31a3330c20cf6754ecdf9f4a90337a9e`, manifest `a7ed48cfa9a43cd6c7db41198bcaa7fc5f7f160bb1219a68cf0bb20c6659cc6c`. These can be checked against downloaded files.
 - **Navigating Dynamic Curvature Exceptional Points:** the worked GAS-margin example (3.0 - 1.641008 = 1.358992) is arithmetically correct. Whether the condition certifies stability or detects falsification is a mathematical claim needing independent review; the SHA-256 hash chain itself is standard and detects tampering on its own.
 - Records give no DOI numbers in the supplied text; add them here once known.
+
+## Additional DOIs (author-supplied title mapping)
+
+The author reports these resolve to the titles below. This repository could not reach Zenodo, so the mapping is unverified here; check each DOI before citing. A DOI proves a dated deposit exists, not the correctness of its content.
+
+- https://doi.org/10.5281/zenodo.23968357: The Proclean Hierarchical Constraint Architecture: A Formalized, Adversarially Verified, and Mathematically Proven Theory of Systemic Stability
+- https://doi.org/10.5281/zenodo.23954808: Systems Pathology: A Unified Framework for Cryptographic Data Integrity and Non-Hermitian Early-Warning Detection
+- https://doi.org/10.5281/zenodo.23919745: PHCA Digital Twin Formal Specification & Implementation Blueprint
+
+Excluded: 10.5281/zenodo.21319990 was reported not to resolve. Words such as "adversarially verified" and "mathematically proven" in titles are the author's claims and have not been reviewed here.
 
 ## Usage notes
 
